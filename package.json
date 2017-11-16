@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:HospitalRun/hospitalrun-server"
+    "url": "git@github.com:egibar/hospitalrun-server"
   },
   "author": "John Kleinschmidt",
   "contributors": [

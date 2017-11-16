@@ -3,7 +3,7 @@ services:
   nginx:
     build:
       args:
-        DOMAIN_NAME: www.example.com
+        DOMAIN_NAME: localhost:4300
       context: nginx/.
       dockerfile: Dockerfile
     links:

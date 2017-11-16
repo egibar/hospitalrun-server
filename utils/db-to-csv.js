@@ -32,6 +32,7 @@ const ALLOWED_TYPES = [
   'patientNote',
   'payment',
   'photo',
+  'document',
   'priceProfile',
   'pricing',
   'procCharge',
@@ -123,6 +124,9 @@ const RELATIONSHIPS = {
     invoice: 'invoice'
   },
   photo: {
+    patient: 'patient'
+  },
+  document: {
     patient: 'patient'
   },
   pricing: {

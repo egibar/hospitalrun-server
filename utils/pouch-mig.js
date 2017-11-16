@@ -119,6 +119,11 @@ function migrateRecords() {
           break;
         }
 
+        case 'document': {
+          updateChildId(newDoc, 'patient');
+          break;
+        }
+
         case 'pricing': {
           updateChildId(newDoc, 'pricingOverrides');
           newDoc.data.pricingType = newDoc.data.type;

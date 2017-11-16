@@ -119,6 +119,9 @@ var schema = {
   photo: [{
     key: 'patient'
   }],
+  document: [{
+    key: 'patient'
+  }],
   pricing: [{
     key: 'pricingOverrides',
     rel: 'hasMany',

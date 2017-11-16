@@ -392,6 +392,12 @@ maindb.list({startkey: 'appointment_', include_docs: true}, function(err, result
           shouldUpdate = false;
           break;
         }
+        case 'document': {
+          result.doc._deleted = true;
+          recordsToUpdate.push(result.doc);
+          shouldUpdate = false;
+          break;
+        }
         case 'procedure': {
           docToUpdate.anesthesiologist = getFullName(anesthesiologists);
           docToUpdate.assistant = getFullName(physicians);
@@ -417,7 +423,7 @@ maindb.list({startkey: 'appointment_', include_docs: true}, function(err, result
       }
     });
     if (recordsToUpdate.length > 0) {
-      maindb.bulk({ docs: recordsToUpdate}, function(err, results) {
+      maindb.bulk({docs: recordsToUpdate}, function(err, results) {
         if (err) {
           console.log('Error updating patient notes records.', err);
         } else {
